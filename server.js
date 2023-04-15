@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 
   app.get('/pokemon', function (req, res) {
     console.log(pokemon)
-    res.render('Index')
+    res.render('Index', {pokemonArray: pokemon})
   })
   app.listen(port)
 
