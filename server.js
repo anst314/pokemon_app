@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const port = 3000;
+app.set('view engine', 'jsx');
+app.engine('jsx', require('jsx-view-engine').createEngine());
 
 const pokemon = require('./models/pokemon')
 app.get('/', function (req, res) {
@@ -10,7 +12,7 @@ app.get('/', function (req, res) {
 
   app.get('/pokemon', function (req, res) {
     console.log(pokemon)
-    res.send(pokemon)
+    res.render('Index')
   })
   app.listen(port)
 
