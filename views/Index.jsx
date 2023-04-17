@@ -6,9 +6,11 @@ function capitalizeFirstLetter(string) {
 function Index({pokemonArray}) {
     return(
       <ul>
-        {pokemonArray.map(pokemon => {
+        {pokemonArray.map((pokemon, index) => {
             return(
-                <li>{capitalizeFirstLetter(pokemon.name)}</li>
+                <li>
+                  <a href={`/pokemon/${index}`}>{capitalizeFirstLetter(pokemon.name)}</a>
+                  </li>
             )
         })}
       </ul>
