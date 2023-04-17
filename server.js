@@ -14,6 +14,11 @@ app.get('/', function (req, res) {
     console.log(pokemon)
     res.render('Index', {pokemonArray: pokemon})
   })
+
+  app.get('/pokemon/:id', function (req, res){
+    console.log(req.params)
+    res.send(req.params.id)
+  })
   app.listen(port)
 
 
