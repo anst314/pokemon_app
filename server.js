@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 
   app.get('/pokemon/:id', function (req, res){
     console.log(req.params)
-    res.send(req.params.id)
+    res.render('Show', {pokemon: pokemon[req.params.id]})
   })
   app.listen(port)
 
